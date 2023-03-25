@@ -22,4 +22,12 @@ describe("s2", () => {
 
     assert.equal(currentValue.toString(), expectedValue);
   });
+  it("should add a people", async () => {
+    const name = "dima";
+    const expectedValue = "42";
+    const trxResponse = await simpleStorage.addPerson(name, "42");
+    await trxResponse.wait(1);
+    const currentValue = await simpleStorage.nameToFavoriteNumber(name);
+    assert.equal(currentValue.toString(), expectedValue);
+  });
 });
