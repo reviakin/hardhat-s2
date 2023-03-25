@@ -11,7 +11,6 @@ async function main() {
     await S2.deployTransaction.wait(6);
     await verify(S2.address, []);
   }
-  // todo try to store and update value
 }
 
 async function verify(contractAddress: string, args?: any) {
